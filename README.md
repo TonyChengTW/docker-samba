@@ -14,15 +14,22 @@ Windows, OS/2, Linux and many others.
 
 By default there are no shares configured, additional ones can be added.
 
+## Build this Docker Image
+    sudo docker build -t tonychengtw/samba:0.0.9 ./
+
 ## Hosting a Samba instance
 
-    sudo docker run -it -p 139:139 -p 445:445 -d dperson/samba
+    sudo docker run -it -p 139:139 -p 445:445 -d tonychengtw/samba:0.0.9
 
 OR set local storage:
 
-    sudo docker run -tid --name samba -p 139:139 -p 445:445 -v /home/tony:/incoming  tonycheng/samba:0.0.1 \
+    sudo docker run -tid --name samba -p 139:139 -p 445:445 \
+                 -v /sdb1/amule/incoming:/incoming \
+                 -v /sdb1/Tony的電影院:/Tony的電影院 \
+                 tonychengtw/samba:0.0.9 \
                  -t "Asia/Taipei" -u "tony;$USERPASSWORD" -w WORKGROUP \
-                 -s "Incoming;/incoming;yes;no;no;tony;tony;tony"
+                 -s "Tony的電影院;/Tony的電影院;yes;no;no;tony;tony;tony" \
+                 -s "Amule-Incoming;/incoming;yes;no;no;tony;tony;tony"
 
 ## Configuration
 
