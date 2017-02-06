@@ -20,9 +20,15 @@ By default there are no shares configured, additional ones can be added.
 
 OR set local storage:
 
+<<<<<<< HEAD
     sudo docker run -tid --name samba -p 139:139 -p 445:445 -v /home/tony:/incoming  tonycheng/samba:0.0.1 \
                  -t "Asia/Taipei" -u "tony;$USERPASSWORD" -w WORKGROUP \
                  -s "Incoming;/incoming;yes;no;no;tony;tony;tony"
+=======
+   sudo docker run -tid --name samba -p 139:139 -p 445:445 -v /home/tony:/incoming  tonycheng/samba:0.0.1 \
+   -t "Asia/Taipei" -u "tony;$USERPASSWORD" -w WORKGROUP \
+   -s "Incoming;/incoming;yes;no;no;tony;tony;tony"
+>>>>>>> 2edc1728b48d32766194931ec55fb3e8f930874a
 
 ## Configuration
 
