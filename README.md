@@ -23,14 +23,12 @@ By default there are no shares configured, additional ones can be added.
 
 OR set local storage:
 
-    sudo docker run -tid --name samba -p 139:139 -p 445:445 \
-                 -v /sdb1/docker-volume/samba/amule/incoming:/samba/incoming \
+    sudo docker run -tid --name samba --restart always -p 139:139 -p 445:445 \
                  -v /sdb1/docker-volume/samba/Tony的電影院:/samba/Tony的電影院 \
                  -v /sdb1/docker-volume/samba/Tools:/samba/tools \
                  tonychengtw/samba:0.0.9 \
                  -t "Asia/Taipei" -u "tony;$PASSWORD" -w WORKGROUP \
                  -s "Tony的電影院;/samba/Tony的電影院;yes;no;yes;;;" \
-                 -s "Amule-Incoming;/samba/incoming;yes;no;no;tony;tony;tony" \
                  -s "Tools;/samba/tools;yes;no;yes;;;"
 **NOTICE**  Change $PASSWORD to your password.
 
