@@ -26,10 +26,12 @@ OR set local storage:
     sudo docker run -tid --name samba --restart always -p 139:139 -p 445:445 \
                  -v /sdb1/docker-volume/samba/Tony的電影院:/samba/Tony的電影院 \
                  -v /sdb1/docker-volume/samba/Tools:/samba/tools \
+                 -v /media/tony/Tools_AV/Aire:/samba/aire \
                  tonychengtw/samba:0.0.9 \
                  -t "Asia/Taipei" -u "tony;$PASSWORD" -w WORKGROUP \
                  -s "Tony的電影院;/samba/Tony的電影院;yes;no;yes;;;" \
-                 -s "Tools;/samba/tools;yes;no;yes;;;"
+                 -s "Tools;/samba/tools;yes;no;yes;;;" \
+                 -s "Aire-Total;/samba/aire;no;no;no;tony;;"
 **NOTICE**  Change $PASSWORD to your password.
 
 ## Configuration
