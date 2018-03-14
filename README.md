@@ -30,7 +30,7 @@ docker run -tid --name samba --restart always -p 139:139 -p 445:445 \
 -v /sdb1/docker-volume/samba/parker:/samba/parker \
 -v /media/tony/Tools_AV/Aire:/samba/aire \
 tonychengtw/samba:0.0.9 \
-t "Asia/Taipei" -u "tony;$PASSWORD" -u "parkerch;$PASSWORD2" -w WORKGROUP \
+-t "Asia/Taipei" -u "tony;$PASSWORD" -u "parkerch;$PASSWORD2" -w WORKGROUP \
 -s "Parker_Stuff;/samba/parker;yes;no;yes;;;" \
 -s "Tony的電影院;/samba/Tony的電影院;yes;no;yes;;;" \
 -s "Tools;/samba/tools;yes;no;yes;;;" \-s "所有貴重的照片;/samba/所有貴重的照片;yes;no;yes;;;" \
